@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     String firstName, lastName;
 
     ValuesFragment valuesFragment;
+    SecondFragment secondFragment;
 
     public static final int SECOND_ACTIVITY_REQUEST_CODE = 200;
 
@@ -38,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         valuesFragment = new ValuesFragment();
+        secondFragment = new SecondFragment();
         loadFragment(valuesFragment);
+        loadSecondFragment(secondFragment);
     }
 
     @OnClick(R.id.btnSubmit)
@@ -91,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void loadSecondFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container2, fragment);
         fragmentTransaction.commit();
     }
 }

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <EditText
             android:id="@+id/fgFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,13 +18,19 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/fgLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Last Name"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/fgButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send values to second Fragment"/>
 
     </LinearLayout>
 
