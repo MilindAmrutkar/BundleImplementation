@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IDataListener{
 
     @BindView(R.id.firstName)
     EditText etFirstName;
@@ -102,5 +102,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container2, fragment);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void sendData(String firstName, String lastName) {
+        if(!TextUtils.isEmpty(firstName) && (!TextUtils.isEmpty(lastName))) {
+            etFirstName.setText(firstName);
+            etLastName.setText(lastName);
+        }
     }
 }
